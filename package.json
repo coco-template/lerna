@@ -1,0 +1,66 @@
+{
+  "name": "coco-lerna",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "description": "yet, speed mono repo management setup",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coco-template/lerna.git"
+  },
+  "keywords": [
+    "lerna",
+    "monorepo"
+  ],
+  "author": "huang.jian <hjj491229492@hotmail.com>",
+  "contributors": [
+    {
+      "name": "huang.jian",
+      "email": "hjj491229492@hotmail.com"
+    },
+    {
+      "name": "yang.yuncai",
+      "email": "383235388@qq.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coco-template/lerna/issues"
+  },
+  "homepage": "https://github.com/coco-template/lerna#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "cz-conventional-changelog": "3.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.2.2",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^2.0.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
