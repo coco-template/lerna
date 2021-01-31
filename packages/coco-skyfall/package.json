@@ -1,0 +1,44 @@
+{
+  "name": "coco-skyfall",
+  "version": "0.1.0",
+  "private": true,
+  "description": "yet, just direct package within project",
+  "types": "types/index.ts",
+  "module": "esm/index.js",
+  "main": "cjs/index.js",
+  "files": [
+    "esm",
+    "cjs",
+    "types"
+  ],
+  "scripts": {
+    "precompile": "rm -rf cjs esm types",
+    "compile": "npm-run-all compile:*",
+    "compile:types": "tsc -p tsconfig.json",
+    "compile:esm": "npm-run-all compile:esm:*",
+    "compile:esm:babel": "babel src --out-dir esm --extensions '.ts'",
+    "compile:esm:linaria": "cli 'src/**/*.ts' -o esm -r src",
+    "compile:cjs": "npm-run-all compile:cjs:*",
+    "compile:cjs:babel": "babel src --out-dir cjs --extensions '.ts' --plugins=@babel/plugin-transform-modules-commonjs",
+    "compile:cjs:linaria": "cli 'src/**/*.ts' -o cjs -r src",
+    "prepublishOnly": "npm run compile"
+  },
+  "browserslist": [
+    "last 2 years",
+    "ios >= 10"
+  ],
+  "dependencies": {
+    "@linaria/cli": "^3.0.0-beta.1",
+    "@linaria/core": "^3.0.0-beta.1",
+    "@linaria/react": "^3.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@linaria/babel-preset": "^3.0.0-beta.1",
+    "@linaria/cli": "^3.0.0-beta.1",
+    "@linaria/shaker": "^3.0.0-beta.1",
+    "typescript": "^4.1.3"
+  }
+}
