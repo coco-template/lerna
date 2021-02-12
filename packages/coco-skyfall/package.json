@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "yet, just direct package within project",
-  "types": "types/index.ts",
+  "types": "types/index.d.ts",
   "module": "esm/index.js",
   "main": "cjs/index.js",
   "files": [
